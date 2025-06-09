@@ -121,5 +121,16 @@
 
     </div>
 
+    <script src="./note.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            if (typeof AnnotationApp !== 'undefined') {
+                new AnnotationApp('.container');
+            } else {
+                console.error('AnnotationApp module not loaded.');
+            }
+        });
+    </script>
+
 </body>
 </html>
