@@ -1,0 +1,341 @@
+/* styles.css */
+
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css');
+
+@media print {
+    body {
+        display: none !important;
+    }
+}
+
+/* --- General Body and Layout --- */
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    color: #333;
+    direction: rtl;
+    margin: 0; /* Added to ensure no default browser margins interfere */
+    padding: 0; /* Added for consistency */
+    font-size: 0.9rem;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px; /* Max-width for very large screens */
+    margin: 25px auto;
+    padding: 35px;
+    background-color: #ffffff;
+}
+
+/* --- Navigation (Included from your CSS, can be used for future navigation elements) --- */
+.nav-container {
+    text-align: center;
+    padding: 10px 0; /* Padding added to nav-container itself */
+    margin-bottom: 20px; /* Space between nav and header */
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.nav-button {
+    position: relative;
+    z-index: 1001;
+    font-family: 'Vazirmatn', sans-serif;
+    background-color: #4CAF50; /* Primary green */
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 500;
+    margin: 5px 8px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* --- Header (General for Lectures) --- */
+header {
+    text-align: center;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #4CAF50; /* Consistent primary green */
+    margin-bottom: 35px;
+}
+
+header h1 {
+    color: #2c3e50; /* Dark blue-grey for main titles */
+    font-size: 2.6em;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 1.15em;
+    color: #555;
+    margin-top: 0;
+}
+
+/* --- Typography --- */
+h2 {
+    color: #16a085; /* Teal shade */
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 12px;
+    margin-top: 25px; /* Adjusted from 45px for better flow within cards */
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+h3 {
+    color: #2980b9; /* Primary blue */
+    margin-top: 30px; /* Adjusted from 35px */
+    margin-bottom: 20px;
+    font-size: 1.7em;
+    font-weight: 600;
+}
+
+h4 {
+    color: #34495e; /* Dark grey-blue for sub-subheadings */
+    margin-top: 25px; /* Adjusted from 30px */
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+p, li {
+    font-size: 1.1em;
+    text-align: justify;
+    color: #34495e; /* Consistent text color */
+    margin-bottom: 1em;
+}
+
+ul, ol {
+    padding-right: 25px; /* Standard padding for lists */
+    margin-bottom: 1em;
+}
+
+li {
+    margin-bottom: 0.6em; /* Spacing between list items */
+}
+
+strong { /* General strong emphasis */
+    color: #c0392b; /* A distinct red for emphasis, use sparingly */
+    font-weight: 600;
+}
+
+mark, .highlight { /* For inline text highlighting - unified 'mark' and '.highlight' */
+    background-color: #f9e79f; /* yellow highlight */
+    color: #333;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-weight: 500;
+}
+
+
+/* --- Special Blocks --- */
+.note, .definition, .important-questions, .pep-guideline, .references, .custom-box {
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 8px;
+    border-right-width: 5px;
+    border-right-style: solid;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.note {
+    background-color: #e8f6f3; /* Light teal background */
+    border-right-color: #1abc9c; /* Teal border */
+}
+.note strong { /* Example of specific strong styling within a block if needed */
+    color: #117a65;
+}
+
+.definition {
+    background-color: #fef9e7; /* Light yellow background */
+    border-right-color: #f39c12; /* Orange border */
+}
+.definition strong {
+    color: #d35400;
+}
+
+.important-questions { /* Renamed for broader use, or you can keep specific names */
+    background-color: #fdedec; /* Light red background (was #fff0f0) */
+    border-right-color: #e74c3c; /* Red border */
+}
+.important-questions p:first-child, .important-questions strong {
+    font-weight: bold;
+    color: #c0392b; /* Red color for emphasis */
+}
+.important-questions p:first-child {
+    margin-bottom: 10px;
+}
+
+
+.pep-guideline { /* Example from Rabies, can be generalized if needed */
+    background-color: #fdedec; /* Similar to important questions, adjust if needed */
+    border-right-color: #e74c3c; /* Reddish border */
+    border: 1px solid #fadbd8; /* Adding full border for this one */
+    border-right-width: 5px; /* Keep the right border prominent */
+}
+
+.references { /* For the bibliography section */
+    background-color: #f8f9fa;
+    border-right-color: #6c757d;
+}
+.references ul {
+    list-style-type: none;
+    padding-right: 0;
+}
+.references li {
+    background-color: #e9ecef;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.95em;
+}
+
+/* --- Tables --- */
+.table-responsive-wrapper { /* Wrap tables in this div for horizontal scroll on mobile */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0; /* Margin is handled by wrapper if used */
+}
+th, td {
+    border: 1px solid #e0e0e0;
+    padding: 14px 12px;
+    text-align: right;
+    vertical-align: top; /* Better alignment for multi-line cells */
+}
+th {
+    background-color: #4CAF50; /* Consistent primary green */
+    color: white;
+    font-weight: 600;
+    font-size: 1.05em;
+}
+tr:nth-child(even) {
+    background-color: #f8f9fa; /* Very light grey for even rows */
+}
+tr:hover {
+    background-color: #eef7ee; /* Lighter green hover for table rows */
+}
+
+/* Additional custom classes for specific elements if needed */
+.contributors-note {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    font-size: 0.9em;
+    color: #555;
+    border: 1px solid #e0e0e0;
+}
+.contributors-note p {
+    margin-bottom: 0.3em;
+    font-size: 1em; /* Relative to parent */
+    color: #444;
+}
+.contributors-note strong {
+    color: #333; /* Less aggressive red for this context */
+}
+
+.italic-centered-note {
+    text-align: center;
+    font-style: italic;
+    color: #555555;
+    margin: 15px 0;
+    font-size: 0.95em;
+}
+
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px; /* Increased margin */
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.9em;
+    color: #6c757d; /* Grey text for footer */
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 93%;
+        padding: 25px 10px;
+        margin: 0px 0;
+        border-radius: 0; /* Full width, no radius on very small screens */
+        box-shadow: none;
+    }
+    header {
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+    }
+    header h1 {
+        font-size: 1.8em;
+    }
+    header p {
+        font-size: 1em;
+    }
+    h2 {
+        font-size: 1.5em;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+    h3 { /* General h3 */
+        font-size: 1.3em;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+    .disease-block h3 { /* h3 inside disease-block */
+        font-size: 1.25em;
+    }
+    h4 {
+        font-size: 1.15em;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    p, li {
+        font-size: 0.95em;
+        line-height: 1.7;
+    }
+    .nav-button {
+        font-size: 0.9em;
+        padding: 9px 12px;
+        margin: 3px 4px;
+    }
+    .note, .definition, .important-questions, .pep-guideline, .references, .disease-block {
+        padding: 12px;
+        margin: 15px 0;
+    }
+    th, td {
+        padding: 8px 5px;
+        font-size: 0.9em;
+    }
+    .references li {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+}
+
+
+  iframe {
+    overflow: hidden;
+    scrollbar-width: none; /* برای فایرفاکس */
+    -ms-overflow-style: none; /* برای IE */
+}
+
+iframe::-webkit-scrollbar {
+    display: none; /* برای کروم و سافاری */
+}

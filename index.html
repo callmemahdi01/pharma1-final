@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>فهرست جلسات جزوه فارماکولوژی اختصاصی ۱</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- CSS Reset/Normalization Basics --- */
+        @media print {
+            body {
+                display: none !important;
+            }
+        }
+        html {
+            box-sizing: border-box;
+            -webkit-text-size-adjust: 100%;
+        }
+        *, *::before, *::after {
+            box-sizing: inherit;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            direction: rtl;
+            background-color: #f8f9fa;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            text-align: center;
+            font-size: 0.85em;
+            color: #6c757d;
+            margin-bottom: 25px;
+        }
+
+        .session-list-container h2 {
+            text-align: center;
+            color: #1abc9c;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .session-list {
+            list-style: none;
+            display: grid;
+            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+
+        .session-list li {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.2s ease-in-out, transform 0.2s ease;
+            overflow: hidden;
+        }
+
+        .session-list li:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .session-list li:nth-child(3n+1) { background-color: #e9f7ef; border-color: #d1f0e0; }
+        .session-list li:nth-child(3n+2) { background-color: #eaf2f8; border-color: #d4e6f1; }
+
+
+        .session-list a {
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .session-number-badge {
+            background-color: #1abc9c;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.75em;
+            font-weight: 600;
+            margin-left: 10px;
+            min-width: auto;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .session-title-text {
+            font-size: 1em;
+            font-weight: 500;
+            flex: 1;
+            min-width: 0;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+        
+        /* Iframe Section */
+        .iframe-section h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            margin-top: 30px;
+            font-size: 1.4em;
+            color: #34495e;
+        }
+
+        .iframe-container {
+            position: relative;
+            background-color: #e9ecef;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        iframe {
+            width: 100%;
+            height: 80vh;
+            border: none;
+            display: block;
+            background-color: white;
+        }
+
+        .fullscreen-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px; 
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+        }
+        .fullscreen-btn .material-icons {
+            font-size: 22px;
+        }
+        .fullscreen-btn:hover {
+            background-color: rgba(0, 0, 0, 0.75);
+        }
+
+        .iframe-container:fullscreen {
+            padding: 0;
+            background-color: #000;
+        }
+        .iframe-container:fullscreen iframe {
+            height: 100vh;
+        }
+        .iframe-container:fullscreen .fullscreen-btn {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 2147483647;
+            background-color: rgba(255, 255, 255, 0.25);
+            color: #000;
+        }
+        .iframe-container:fullscreen .fullscreen-btn:hover {
+            background-color: rgba(255, 255, 255, 0.45);
+        }
+
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #6c757d;
+            padding-bottom: 15px;
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+                margin: 10px auto;
+            }
+            header h1 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>فهرست جلسات جزوه فارماکولوژی اختصاصی ۱</h1>
+            <p>
+                لطفاً جلسه مورد نظر خود را برای نمایش انتخاب کنید.
+            </p>
+        </header>
+
+        <section class="session-list-container">
+            <h2>لیست جلسات</h2>
+            <ul class="session-list">
+                <li><a onclick="loadSession('Ny5odG1s')"><span class="session-number-badge">جلسه ۷</span><span class="session-title-text">کورتیکواستروئیدها</span></a></li>
+                <li><a onclick="loadSession('OC5odG1s')"><span class="session-number-badge">جلسه ۸</span><span class="session-title-text">داروهای ضدالتهاب غیراستروئیدی (NSAIDs)</span></a></li>
+                <li><a onclick="loadSession('OS5odG1s')"><span class="session-number-badge">جلسه ۹</span><span class="session-title-text">داروهای مورد استفاده در درمان آسم</span></a></li>
+                <li><a onclick="loadSession('MTAuaHRtbA==')"><span class="session-number-badge">جلسه ۱۰</span><span class="session-title-text">داروهای گوارشی</span></a></li>
+                <li><a onclick="loadSession('MTEuaHRtbA==')"><span class="session-number-badge">جلسه ۱۱</span><span class="session-title-text">داروهای ضد هایپرلیپیدمی</span></a></li>
+            </ul>
+        </section>
+
+        <div class="iframe-section">
+            <h2>نمایش جزوه</h2>
+            <div class="iframe-container" id="iframe-viewer-container">
+                <button class="fullscreen-btn" onclick="toggleFrameFullscreen()" title="نمایش تمام صفحه">
+                    <span class="material-icons">fullscreen</span>
+                </button>
+                <iframe id="session-frame" src="" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <footer>
+            <p>موفق و پیروز باشید!</p>
+        </footer>
+    </div>
+
+    <script>
+        const sessionFrame = document.getElementById('session-frame');
+        const iframeContainer = document.getElementById('iframe-viewer-container');
+        const fullscreenBtn = iframeContainer.querySelector('.fullscreen-btn');
+        const fullscreenBtnIcon = fullscreenBtn.querySelector('.material-icons');
+        const LAST_SESSION_KEY = 'lastLoadedPharmaSession';
+
+        function loadSession(encodedFilename, isAutoLoad = false) {
+            let filename;
+            try {
+                filename = atob(encodedFilename); 
+            } catch (e) {
+                console.error("Failed to decode filename:", encodedFilename, e);
+                return;
+            }
+            
+            const url = filename;
+            sessionFrame.src = url;
+            
+            try {
+                localStorage.setItem(LAST_SESSION_KEY, encodedFilename);
+            } catch (e) {
+                console.warn("Could not save session to localStorage:", e);
+            }
+            
+            if (!isAutoLoad) {
+                setTimeout(() => {
+                    if (iframeContainer) {
+                        window.scrollTo({
+                            top: iframeContainer.offsetTop - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 150);
+            }
+        }
+
+        function toggleFrameFullscreen() {
+            if (!sessionFrame.src || sessionFrame.getAttribute('src') === "") {
+                alert('لطفا ابتدا یک جلسه را برای نمایش انتخاب کنید.');
+                return;
+            }
+
+            const isInFullscreen = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+
+            if (!isInFullscreen) {
+                if (iframeContainer.requestFullscreen) iframeContainer.requestFullscreen();
+                else if (iframeContainer.mozRequestFullScreen) iframeContainer.mozRequestFullScreen();
+                else if (iframeContainer.webkitRequestFullscreen) iframeContainer.webkitRequestFullscreen();
+                else if (iframeContainer.msRequestFullscreen) iframeContainer.msRequestFullscreen();
+            } else {
+                if (document.exitFullscreen) document.exitFullscreen();
+                else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
+                else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+                else if (document.msExitFullscreen) document.msExitFullscreen();
+            }
+        }
+
+        function updateFullscreenButtonState() {
+            const isTargetInFullscreen = document.fullscreenElement === iframeContainer || document.webkitFullscreenElement === iframeContainer;
+
+            if (isTargetInFullscreen) {
+                fullscreenBtnIcon.textContent = 'fullscreen_exit';
+                fullscreenBtn.title = 'خروج از تمام صفحه';
+            } else {
+                fullscreenBtnIcon.textContent = 'fullscreen';
+                fullscreenBtn.title = 'نمایش تمام صفحه';
+            }
+        }
+
+        document.addEventListener('fullscreenchange', updateFullscreenButtonState);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenButtonState);
+        document.addEventListener('mozfullscreenchange', updateFullscreenButtonState);
+        document.addEventListener('MSFullscreenChange', updateFullscreenButtonState);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            let sessionToLoad = null;
+            try {
+                sessionToLoad = localStorage.getItem(LAST_SESSION_KEY);
+            } catch (e) {
+                console.warn("Could not read session from localStorage:", e);
+            }
+
+            if (sessionToLoad) {
+                loadSession(sessionToLoad, true);
+            } else {
+                // **تغییر اصلی:** به صورت پیش‌فرض فایل 7.html بارگذاری می‌شود
+                // Base64 for '7.html' is 'Ny5odG1s'
+                loadSession('Ny5odG1s', true);
+            }
+        });
+    </script>
+</body>
+</html>
