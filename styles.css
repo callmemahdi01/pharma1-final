@@ -2,11 +2,11 @@
 
 @import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css');
 
-@media print {
+/* @media print {
     body {
         display: none !important;
     }
-}
+} */
 
 /* --- General Body and Layout --- */
 body {
@@ -329,13 +329,3 @@ footer {
     }
 }
 
-
-  iframe {
-    overflow: hidden;
-    scrollbar-width: none; /* برای فایرفاکس */
-    -ms-overflow-style: none; /* برای IE */
-}
-
-iframe::-webkit-scrollbar {
-    display: none; /* برای کروم و سافاری */
-}
