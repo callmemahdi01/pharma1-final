@@ -131,7 +131,7 @@ strong { /* General strong emphasis */
 mark, .highlight { /* For inline text highlighting - unified 'mark' and '.highlight' */
     background-color: #f9e79f; /* yellow highlight */
     color: #333;
-    padding: 0.2em 0.4em;
+    padding: 0em 0.4em;
     border-radius: 3px;
     font-weight: 500;
 }
